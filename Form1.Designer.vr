@@ -1,0 +1,192 @@
+﻿BegClass Form1 Partial(*Yes)
+	DclFld checkboxShowPasswords Type(System.Windows.Forms.CheckBox) Access(*Private) WithEvents(*Yes)
+	DclFld label5 Type(System.Windows.Forms.Label) Access(*Private) WithEvents(*Yes)
+	DclFld buttonChangeCredentials Type(System.Windows.Forms.Button) Access(*Private) WithEvents(*Yes)
+	DclFld linklabelContinue Type(System.Windows.Forms.LinkLabel) Access(*Private) WithEvents(*Yes)
+	DclFld labelMessage Type(System.Windows.Forms.Label) Access(*Private) WithEvents(*Yes)
+	DclFld label4 Type(System.Windows.Forms.Label) Access(*Private) WithEvents(*Yes)
+	DclFld textboxPasswordAgain Type(System.Windows.Forms.TextBox) Access(*Private) WithEvents(*Yes)
+
+	// Required method for Designer support - do not modify
+	// the contents of this method with the code editor.
+	BegSr InitializeComponent
+		*this.buttonChangeCredentials = *new System.Windows.Forms.Button()
+		*this.textboxPassword = *new System.Windows.Forms.TextBox()
+		*this.textboxDatabaseName = *new System.Windows.Forms.TextBox()
+		*this.label1 = *new System.Windows.Forms.Label()
+		*this.label2 = *new System.Windows.Forms.Label()
+		*this.label3 = *new System.Windows.Forms.Label()
+		*this.textboxUser = *new System.Windows.Forms.TextBox()
+		*this.label4 = *new System.Windows.Forms.Label()
+		*this.textboxPasswordAgain = *new System.Windows.Forms.TextBox()
+		*this.labelMessage = *new System.Windows.Forms.Label()
+		*this.linklabelContinue = *new System.Windows.Forms.LinkLabel()
+		*this.label5 = *new System.Windows.Forms.Label()
+		*this.checkboxShowPasswords = *new System.Windows.Forms.CheckBox()
+		*this.SuspendLayout()
+		//
+		//buttonChangeCredentials
+		//
+		*this.buttonChangeCredentials.Location = *new System.Drawing.Point(127I, 541I)
+		*this.buttonChangeCredentials.Name = "buttonChangeCredentials"
+		*this.buttonChangeCredentials.Size = *new System.Drawing.Size(413I, 70I)
+		*this.buttonChangeCredentials.TabIndex = 24I
+		*this.buttonChangeCredentials.Text = "Change credentials"
+		*this.buttonChangeCredentials.UseVisualStyleBackColor = *True
+		//
+		//textboxPassword
+		//
+		*this.textboxPassword.Location = *new System.Drawing.Point(167I, 323I)
+		*this.textboxPassword.Name = "textboxPassword"
+		*this.textboxPassword.Size = *new System.Drawing.Size(320I, 39I)
+		*this.textboxPassword.TabIndex = 6I
+		*this.textboxPassword.UseSystemPasswordChar = *True
+		//
+		//textboxDatabaseName
+		//
+		*this.textboxDatabaseName.Location = *new System.Drawing.Point(167I, 112I)
+		*this.textboxDatabaseName.Name = "textboxDatabaseName"
+		*this.textboxDatabaseName.Size = *new System.Drawing.Size(320I, 39I)
+		*this.textboxDatabaseName.TabIndex = 2I
+		//
+		//label1
+		//
+		*this.label1.AutoSize = *True
+		*this.label1.Location = *new System.Drawing.Point(161I, 73I)
+		*this.label1.Name = "label1"
+		*this.label1.Size = *new System.Drawing.Size(307I, 32I)
+		*this.label1.TabIndex = 3I
+		*this.label1.Text = "Private database name"
+		//
+		//label2
+		//
+		*this.label2.AutoSize = *True
+		*this.label2.Location = *new System.Drawing.Point(161I, 284I)
+		*this.label2.Name = "label2"
+		*this.label2.Size = *new System.Drawing.Size(139I, 32I)
+		*this.label2.TabIndex = 4I
+		*this.label2.Text = "Password"
+		//
+		//label3
+		//
+		*this.label3.AutoSize = *True
+		*this.label3.Location = *new System.Drawing.Point(161I, 180I)
+		*this.label3.Name = "label3"
+		*this.label3.Size = *new System.Drawing.Size(74I, 32I)
+		*this.label3.TabIndex = 6I
+		*this.label3.Text = "User"
+		//
+		//textboxUser
+		//
+		*this.textboxUser.Location = *new System.Drawing.Point(167I, 219I)
+		*this.textboxUser.Name = "textboxUser"
+		*this.textboxUser.Size = *new System.Drawing.Size(320I, 39I)
+		*this.textboxUser.TabIndex = 5I
+		//
+		//label4
+		//
+		*this.label4.AutoSize = *True
+		*this.label4.Location = *new System.Drawing.Point(161I, 388I)
+		*this.label4.Name = "label4"
+		*this.label4.Size = *new System.Drawing.Size(217I, 32I)
+		*this.label4.TabIndex = 8I
+		*this.label4.Text = "Password again"
+		//
+		//textboxPasswordAgain
+		//
+		*this.textboxPasswordAgain.Location = *new System.Drawing.Point(167I, 427I)
+		*this.textboxPasswordAgain.Name = "textboxPasswordAgain"
+		*this.textboxPasswordAgain.Size = *new System.Drawing.Size(320I, 39I)
+		*this.textboxPasswordAgain.TabIndex = 7I
+		*this.textboxPasswordAgain.UseSystemPasswordChar = *True
+		//
+		//labelMessage
+		//
+		*this.labelMessage.AutoSize = *True
+		*this.labelMessage.Font = *new System.Drawing.Font("Microsoft Sans Serif", 12, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (0 *As System.Byte))
+		*this.labelMessage.Location = *new System.Drawing.Point(25I, 676I)
+		*this.labelMessage.Name = "labelMessage"
+		*this.labelMessage.Size = *new System.Drawing.Size(79I, 29I)
+		*this.labelMessage.TabIndex = 25I
+		*this.labelMessage.Text = "label5"
+		//
+		//linklabelContinue
+		//
+		*this.linklabelContinue.AutoSize = *True
+		*this.linklabelContinue.Font = *new System.Drawing.Font("Microsoft Sans Serif", 10, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (0 *As System.Byte))
+		*this.linklabelContinue.Location = *new System.Drawing.Point(25I, 723I)
+		*this.linklabelContinue.Name = "linklabelContinue"
+		*this.linklabelContinue.Size = *new System.Drawing.Size(155I, 25I)
+		*this.linklabelContinue.TabIndex = 26I
+		*this.linklabelContinue.TabStop = *True
+		*this.linklabelContinue.Text = "Click to continue"
+		//
+		//label5
+		//
+		*this.label5.AutoSize = *True
+		*this.label5.Font = *new System.Drawing.Font("Microsoft Sans Serif", 9, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (0 *As System.Byte))
+		*this.label5.Location = *new System.Drawing.Point(25I, 777I)
+		*this.label5.Name = "label5"
+		*this.label5.Size = *new System.Drawing.Size(394I, 22I)
+		*this.label5.TabIndex = 27I
+		*this.label5.Text = "This app works only with DG 16.x and up clients"
+		//
+		//checkboxShowPasswords
+		//
+		*this.checkboxShowPasswords.AutoSize = *True
+		*this.checkboxShowPasswords.Font = *new System.Drawing.Font("Microsoft Sans Serif", 9, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (0 *As System.Byte))
+		*this.checkboxShowPasswords.Location = *new System.Drawing.Point(167I, 472I)
+		*this.checkboxShowPasswords.Name = "checkboxShowPasswords"
+		*this.checkboxShowPasswords.Size = *new System.Drawing.Size(172I, 26I)
+		*this.checkboxShowPasswords.TabIndex = 28I
+		*this.checkboxShowPasswords.Text = "Show passwords"
+		*this.checkboxShowPasswords.UseVisualStyleBackColor = *True
+		//
+		//Form1
+		//
+		*this.AutoScaleDimensions = *new System.Drawing.SizeF(144, 144)
+		*this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+		*this.ClientSize = *new System.Drawing.Size(677I, 815I)
+		*this.Controls.Add(*this.checkboxShowPasswords)
+		*this.Controls.Add(*this.label5)
+		*this.Controls.Add(*this.linklabelContinue)
+		*this.Controls.Add(*this.labelMessage)
+		*this.Controls.Add(*this.label4)
+		*this.Controls.Add(*this.textboxPasswordAgain)
+		*this.Controls.Add(*this.label3)
+		*this.Controls.Add(*this.textboxUser)
+		*this.Controls.Add(*this.label2)
+		*this.Controls.Add(*this.label1)
+		*this.Controls.Add(*this.textboxDatabaseName)
+		*this.Controls.Add(*this.textboxPassword)
+		*this.Controls.Add(*this.buttonChangeCredentials)
+		*this.Font = *new System.Drawing.Font("Microsoft Sans Serif", 14, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (0 *As System.Byte))
+		*this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+		*this.Name = "Form1"
+		*this.Text = "Change private Database Name Credentials"
+		*this.ResumeLayout(*False)
+		*this.PerformLayout()
+	EndSr
+	
+	DclFld textboxPassword Type(System.Windows.Forms.TextBox) Access(*Private) WithEvents(*Yes)
+	DclFld label1 Type(System.Windows.Forms.Label) Access(*Private) WithEvents(*Yes)
+	DclFld label2 Type(System.Windows.Forms.Label) Access(*Private) WithEvents(*Yes)
+	DclFld textboxDatabaseName Type(System.Windows.Forms.TextBox) Access(*Private) WithEvents(*Yes)
+	DclFld label3 Type(System.Windows.Forms.Label) Access(*Private) WithEvents(*Yes)
+	DclFld textboxUser Type(System.Windows.Forms.TextBox) Access(*Private) WithEvents(*Yes)
+	//Required by the Windows Form Designer
+	DclFld components Type(System.ComponentModel.IContainer) Inz(*Nothing)
+	
+	// Clean up any resources being used.
+	// "disposing" is true if managed resources should be disposed; otherwise, false.
+	BegSr Dispose Access(*Protected) Modifier(*Overrides)
+		DclSrParm disposing Type(*Boolean)
+
+		If (disposing *And (components *NE *Nothing))
+			components.Dispose()
+		EndIf
+			
+		*Base.Dispose(disposing)
+	EndSr
+	
+EndClass

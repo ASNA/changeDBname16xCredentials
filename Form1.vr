@@ -1,0 +1,110 @@
+﻿Using System
+Using System.Collections
+Using System.ComponentModel
+Using System.Data
+Using System.Drawing
+Using System.Text
+Using System.Windows.Forms
+
+BegClass Form1 Extends(System.Windows.Forms.Form) Access(*Public) Partial(*Yes)
+
+	/region Default Constructor
+	
+	BegConstructor Access(*Public)
+		//
+		// Required for Windows Form Designer support
+		//
+		InitializeComponent()
+
+		//
+		// TODO: Add any constructor code after InitializeComponent call
+		//
+	EndConstructor
+
+	/endregion
+
+	DclFld dbName Type(ASNADBName) New()
+
+	BegSr buttonChangeCredentials_Click Access(*Private) Event(*this.buttonChangeCredentials.Click)
+		DclSrParm sender Type(*Object)
+		DclSrParm e Type(System.EventArgs)
+
+		DclFld DatabaseName Type(*String) 
+		DclFld User Type(*String) 
+		DclFld Password Type(*String) 
+
+		If NOT IsPrivateDBName(textboxDatabaseName.Text.Trim())
+			labelMessage.Text = String.Format('{0} is not a private database name--no change made', textboxDatabaseName.Text.Trim()) 
+			textboxDatabaseName.Focus()
+			LeaveSr 
+		EndIf 
+
+		If textboxPassword.Text.Trim() <> textboxPasswordAgain.Text.Trim() 
+			labelMessage.Text = 'Passwords don''t match--no change made'
+			textboxPassword.Focus() 
+			LeaveSr 
+		EndIf 
+
+		DatabaseName = textboxDatabaseName.Text.Trim()
+		User = textboxUser.Text.Trim()
+		Password = textboxPassword.Text
+
+		dbName.ChangeCredentials(DatabaseName, User, Password) 
+		labelMessage.Text = 'Credentials changed successfully'
+		linklabelContinue.Visible = *True
+		ChangeInputStatus(*False) 
+	EndSr
+
+	BegFunc IsPrivateDBName Type(*Boolean) 
+		DclSrParm DatabaseName Type(*String) 
+
+		DclArray privateDBNames Type(*String) Rank(1) 
+
+		privateDBNames = dbName.GetPrivateDBNames()
+
+		LeaveSr Array.IndexOf(privateDBNames, DatabaseName) > -1 
+	EndFunc 
+	
+	BegSr Form1_Load Access(*Private) Event(*this.Load)
+		DclSrParm sender Type(*Object)
+		DclSrParm e Type(System.EventArgs)
+
+		labelMessage.Text = String.Empty 
+		linklabelContinue.Visible = *False
+	EndSr
+	
+	BegSr ChangeInputStatus 
+		DclSrParm Enabled Type(*Boolean) 
+	
+		textboxPassword.Enabled = Enabled 
+		textboxDatabaseName.Enabled = Enabled 
+		textboxUser.Enabled = Enabled 
+		textboxPasswordAgain.Enabled = Enabled 
+		buttonChangeCredentials.Enabled = Enabled 
+	EndSr
+	
+	BegSr linklabelContinue_LinkClicked Access(*Private) Event(*this.linklabelContinue.LinkClicked)
+		DclSrParm sender Type(*Object)
+		DclSrParm e Type(System.Windows.Forms.LinkLabelLinkClickedEventArgs)
+
+		ChangeInputStatus(*True) 			
+		labelMessage.Text = String.Empty 
+		linklabelContinue.Visible = *False
+
+		textboxPassword.Text = String.Empty
+		textboxDatabaseName.Text = String.Empty
+		textboxUser.Text = String.Empty
+		textboxPasswordAgain.Text = String.Empty
+
+		textboxDatabaseName.Focus()
+	EndSr
+	
+	BegSr checkboxShowPasswords_CheckedChanged Access(*Private) Event(*this.checkboxShowPasswords.CheckedChanged)
+		DclSrParm sender Type(*Object)
+		DclSrParm e Type(System.EventArgs)
+
+		textboxPassword.UseSystemPasswordChar = NOT textboxPassword.UseSystemPasswordChar
+		textboxPasswordAgain.UseSystemPasswordChar = NOT textboxPasswordAgain.UseSystemPasswordChar
+	EndSr
+	
+EndClass
